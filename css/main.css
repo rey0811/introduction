@@ -1,0 +1,526 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+
+/*
+ * -------------------------------
+ * 全体
+ * -------------------------------
+ */
+ 
+body {
+  color: #000;
+  background-color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* インナー */
+.inner {
+  padding : 0 25px;
+}
+
+/*ローディング画面*/ 
+#loading {
+  /* 画面一杯にローディング画面を広げる */
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1050;
+  /* flexboxを使ってローディングアイコンを画面の中央に寄せる */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.animated {
+  /* アニメーションで表示させるため最初は非表示 */
+  opacity: 0;
+}
+
+/*
+ * -------------------------------
+ * Top
+ * -------------------------------
+ */
+
+/* 切り替え文字のスタイル */
+.c--anim-btn span {
+  text-decoration: none;
+  padding-left: 15px;
+  display: block;
+}
+
+/* 文字の切り替え時間 */
+.c--anim-btn, .c-anim-btn {
+  transition: 0.3s;     
+}
+
+.c--anim-btn {
+  height: 1.5em;
+  line-height: 3.5em; /* 切り替え文字との間隔 */
+  overflow: hidden; /* hover前の文字を隠す */
+  width: 200px; /* ナビゲーションメニュー一つ一つの幅 */
+}
+
+/* hover前後でmargin-topの値を切り替えることで、文字の切り替えをする */
+.c-anim-btn{
+  margin-top: -1em;   
+}
+
+/* hover時に文字切り替え */
+.c--anim-btn:hover .c-anim-btn{
+  margin-top: -4.5em;
+}
+
+.navbar-toggler:focus {
+  outline:none!important;
+}
+
+.top {
+  /* 子要素でposition:absoluteを使うため必要 */
+  position: relative;
+  /* トップ画をナビゲーションバー分ずらす */
+  margin-top: 56px;
+  /*height: 100%;*/
+  /*background-image: linear-gradient(45deg, rgba(0,0,0,.2) 50%, rgba(0,0,0,.1) 50%);*/
+}
+
+.top__bg {
+  /* 背景画像を画面いっぱいに置く */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* スクロールをしても画像固定 */
+}
+
+.top__img,
+.top__video {
+  /* モバイル（デフォルト）では非表示 */
+  /* JSでモバイル判定して切り替える */
+  display: none;
+
+  /* videoの幅を指定 */
+  width: 100%;
+}
+
+.top__overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(45deg, rgba(0,0,0,.2) 50%, rgba(0,0,0,.1) 50%);
+  background-size: 3px 3px;
+  /*ビデオよりも上に指定*/
+  z-index: 2; 
+}
+
+.top__text-box {
+  /* 上下中央に置く */
+  position: absolute;
+  top: 35%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  font-weight: 100;
+  /*オーバーレイよりも上に指定*/
+  z-index: 3;
+}
+
+.top__title {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color:#e8e8e8;
+}
+
+.top__catchphrase {
+  font-size: 1.5rem;
+  margin: 5px 0px;
+  color:#e8e8e8;
+}
+
+/* トップのアイコン(下矢印) */
+.top__icon {
+  color:#e8e8e8;
+}
+
+/*position.scssの.fixed-topを上書き*/
+.fixed-top {
+  /*ナビゲーションバー下に影をつける*/
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+}
+
+/*
+ * -------------------------------
+ * About
+ * -------------------------------
+ */
+
+.about {
+  padding-top: 82px;
+  padding-bottom: 92px;
+  max-width:500px;
+  width:100%;
+  margin:0 auto;
+}
+
+.about__phrase,
+.services__phrase,
+.portfolios__phrase {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.79px;
+}
+
+.about__title,
+.services__title,
+.portfolios__title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+}
+
+/*Aboutの名前部分*/
+.about__name {
+  text-align:center;
+}
+
+.about__introduction {
+  margin: 0px auto;
+}
+
+
+/*Aboutのアイコン*/
+.about__introduction__background__icon {
+    float: left;
+    background: #fff;
+    width: 60px;
+    height:60px;
+    /* 上下中央揃え */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    /* 枠線 */
+    border-radius: 50%;
+    border: .5px solid #6c757d;
+}
+
+.about__introduction__background__title {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+/*Aboutの文*/
+.about__introduction__background__description {
+  /*ここで固定幅を指定することで、左のアイコンも横幅を固定にできる*/
+  flex: 1;
+}
+
+/*
+ * -------------------------------
+ * メッセージ(背景画像＋黒透過)
+ * -------------------------------
+ */
+
+/*メッセージ*/
+.message-bg {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* スクロールをしても画像固定 */
+    height: 200px;
+}
+
+/*メッセージ(contact)*/
+.message-bg-contact {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
+.message {
+    background-color: rgba(0,0,0,0.6);
+    height: 200px;
+    /*左右上下中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*要素を縦並びにする*/
+    flex-direction: column; 
+    /* text-align: center; */
+}
+
+.message p {
+    color: #fff;
+    font-weight: 900;
+    font-size:1.5rem;
+    text-align: center;
+}
+
+/*
+ * -------------------------------
+ * Services
+ * -------------------------------
+ */
+
+.services {
+  padding-top: 82px;
+  padding-bottom: 44px;
+  /*background-color: #d1edfb;*/
+}
+
+.services__service {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ececec;
+  background: #f8f9fa;
+  height: 90%;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+
+.services__service__menu {
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+/*
+ * -------------------------------
+ * Portfolios
+ * -------------------------------
+ */
+
+/*カルーセルのレイアウト*/
+.slider{
+    margin: 50px auto;
+}
+
+.slider img{
+  height: auto;
+  width: 95%;
+  margin: 15px auto;
+  transition-duration: 0.5s;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+
+/*slick setting*/
+.slick-prev:before,
+.slick-next:before {
+    color: #000;
+    font-size:30px;
+    z-index: 2000;
+}
+
+.slick-prev,
+.slick-next {
+    color: #000;
+    z-index: 2000;
+}
+
+.portfolios {
+  padding-top: 82px;
+  padding-bottom: 92px;
+}
+
+.portfolio__title {
+  font-size: 0.8rem;
+}
+
+.portfolios__image {
+  /* 左右中央に置く */
+  margin: 0 auto;
+  text-align: center;
+
+  width: 90%;
+  max-width: 1024px;
+}
+
+.portfolio__image > a {
+  /*クリック時の青枠を消す*/
+  outline: none;
+}
+
+.portfolio__image > a > img:hover {
+  /* 1.1倍に拡大 */
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+  background: rgba(0,0,0,0.3);
+}
+
+.portfolio__description {
+  /*pタグのマージンを消す*/
+  margin-bottom: 0;
+}
+
+/* モーダルの画像 */
+.modal__body__img {
+  max-width:100%;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+}
+
+.modal-dialog {
+  /* モーダル時の最大幅を上書き */
+  max-width: 700px!important;
+}
+
+/*
+ * -------------------------------
+ * footer
+ * -------------------------------
+ */
+footer {
+  padding: 20px 0;
+  background-color: #fafaf3;
+  text-align: center;
+}
+
+/*
+ * -------------------------------
+ * レスポンシブ対応
+ * -------------------------------
+ */
+
+
+/* Bootstrapのmd以上の表示幅で適用されるスタイル */
+@media (min-width: 768px) {
+
+  /*
+   * -------------------------------
+   * Top
+   * -------------------------------
+   */
+
+  .top__title {
+  font-size: 4rem;
+  }
+
+  
+  /* 切り替え文字のスタイル */
+  .c--anim-btn span {
+    padding-left: 0px;
+  }
+  
+  .c--anim-btn {
+    width: 120px; /* ナビゲーションメニュー一つ一つの幅 */
+    text-align:center;
+  }
+
+  /*
+   * -------------------------------
+   * About
+   * -------------------------------
+   */
+
+  .about__introduction {
+    /*margin: 0px 200px;*/
+  }
+
+  /*Aboutの名前部分*/
+  .about__name {
+    text-align:left;
+  }
+
+  .about__title,
+  .services__title,
+  .portfolios__title {
+    font-size: 4rem;
+  }
+
+  .about__phrase,
+  .services__phrase,
+  .portfolios__phrase {
+    font-size: 1.5rem;
+  }
+  
+  .image-portfolios__item {
+    box-shadow: 8px 8px 12px 1px #ccc;
+  }
+
+  /*
+   * -------------------------------
+   * メッセージ(背景画像＋黒透過)
+   * -------------------------------
+   */
+  
+  /*コンテンツ*/
+  .message-bg,
+  .message-bg-contact {
+    height: 300px;
+  }
+
+  .message {
+    height: 300px;
+  }
+
+  /*改行を消す*/
+  .message br {
+    display: none;
+  }
+  
+  .message p {
+    font-size:2.0rem;
+  }
+
+  /*
+   * -------------------------------
+   * Services
+   * -------------------------------
+   */
+  .services__service__menu {
+    font-size: 1.5rem;
+  }
+  
+  /*
+   * -------------------------------
+   * Portfolios
+   * -------------------------------
+   */
+  .portfolio__title {
+    font-size: 1.5rem;
+  }
+
+  .slider img{
+    margin: 25px auto;
+  }
+  
+}
+
+/* Bootstrapのmd以上の表示幅で適用されるスタイル */
+@media (min-width: 992px) {
+
+  /*
+   * -------------------------------
+   * About
+   * -------------------------------
+   */
+
+    .about {
+      max-width:100%;
+    }
+
+    .about__introduction__background__title {
+      font-size: 1.75rem;
+    }
+
+}
+
+/* 印刷用スタイル */
+@media print {
+  .animated {
+    /* すべて表示 */
+    opacity: 1;
+  }
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reo Togashi | Web Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Webフォント -->
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Font Awesome(アニメーション) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css"/>
+  
+  <!-- その他のライブラリのCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="css/vendor/animate.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">  
+  
+  <link rel="stylesheet" href="css/main.css">
+  
+  <noscript>
+    <!-- JavaScriptが無効化されている場合の追加スタイルシート -->
+    <link rel="stylesheet" href="css/noscript.css">
+  </noscript>
+</head>
+
+<body data-spy="scroll" data-target="#navbar">
+  <div id="app">
+    <!-- ローディング画面 -->
+    <div id="loading">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div> <!-- /#loading -->
+    
+    <!-- トップ画面 -->
+    <div id="top" class="top">
+      <!-- ナビゲーションバー -->
+      <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+  
+          <!-- ホームリンク -->
+          <a href="#top" class="navbar-brand nav-link" aria-label="ホーム" @click="smoothScroll">
+            Reo Togashi
+          </a>
+  
+          <!-- 画面幅が狭い時に表示されるハンバーガーメニュー -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- メニュー -->
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+              <navbar-menu ref="foo" href-val="#top" initial-menu="トップ" hover-menu="Top"></navbar-menu>
+              <navbar-menu href-val="#about" initial-menu="私について" hover-menu="About me"></navbar-menu>
+              <navbar-menu href-val="#services" initial-menu="できること" hover-menu="Services"></navbar-menu>
+              <navbar-menu href-val="#portfolios" initial-menu="ポートフォリオ" hover-menu="Portfolios"></navbar-menu>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+
+      <div class="top__overlay"></div>
+      <video autoplay muted loop class="top__video">
+        <source src="video/top-video.mp4" type="video/mp4">
+      </video>
+      <img class="top__img" src="video/top-video-still.jpg">
+      
+      <!-- トップ -->
+      <div class="top__text-box animate__animated animate__bounceInDown">
+        <!--名前-->
+        <h3 class="top__title font-weight-bold">Reo Togashi</h3>
+        <!--キャッチフレーズ-->
+        <div class="top__catchphrase">Web Enginner</div>
+        <!--下矢印-->
+        <a href="#about" class="navbar-brand nav-link" aria-label="ホーム" @click="smoothScroll">
+          <i class="fas fa-2x fa-chevron-circle-down top__icon"></i>
+        </a>
+      </div>
+    </div>
+  
+    <!-- 自己紹介 -->
+    <section id="about" class="about inner">
+      <div class="about__phrase animated">私について</div>
+      <h2 class="about__title animated">About me</h2>
+      <div class="about__me animated">
+        <div class="row">
+          <!-- 顔写真 -->
+          <div class="mb-3 col-lg-6 text-center animated">
+            <img class="img-fluid rounded" src="img/profile.jpg">
+          </div>
+  
+          <!-- 紹介文 -->
+          <div class="about__introduction col-lg-6 animated">
+            <!--経歴-->
+            <div class="about__introduction__backgrounds">
+              <!--誕生-->
+              <about-introduction-background
+                intro-title="1991年 - 誕生" 
+                icon-type="fa-baby"
+                icon-animation="faa-tada"
+                intro-description="神奈川県川崎市にて生まれる。<br>名前の由来は、珍しい名前を付けたかったから。"
+              >
+              </about-introduction-background>
+              <!--大学-->
+              <about-introduction-background
+                intro-title="2010年 - 2016年 大学入学" 
+                icon-type="fa-university"
+                icon-animation="faa-tada"
+                intro-description="都内の国公立大学に入学し、プログラミングや機械学習を学ぶ。<br>長期休暇を利用して、海外旅行や海外インターンシップを経験(計40ヵ国)"
+              >
+              </about-introduction-background>
+              <!--社会人(エンジニア)-->
+              <about-introduction-background
+                intro-title="2016年 - エンジニア" 
+                icon-type="fa-laptop-code"
+                icon-animation="faa-tada"
+                intro-description="アプリケーションエンジニアとして大手企業に就職する。<br>フロントエンド・バックエンドを使ったシステム開発に従事。"
+              >
+              </about-introduction-background>
+              <!--社会人(新規事業開発)-->
+              <about-introduction-background
+                intro-title="2019年 - グローバル事業開発" 
+                icon-type="fa-lightbulb"
+                icon-animation="faa-tada"
+                intro-description="海外プロジェクトの新規事業開発としてグループ会社に出向する。<br>実証実験推進や顧客との要件定義など、幅広く活動推進中。<br>一方で、再度、エンジニアとして活躍したい気持ちが芽生え始める。"
+              >
+              </about-introduction-background>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- message -->
+    <div class="message-bg message-bg-image1 " style="background-image: url(./img/bg-job.jpg);">
+      <div class="message">
+          <p>多様な経験を生かし、</br>全力で仕事に取り組みます</p>
+      </div>
+    </div>
+
+    <!-- 仕事内容 -->
+    <section id="services" class="services inner">
+      <div class="services__phrase animated">できること</div>
+      <h2 class="services__title animated">Services</h2>
+      <div class="container">
+        <div class="row">
+          <my-service
+            service-icon="fa-code"
+            service-menu="バックエンド開発"
+            service-description="大手メーカ企業にて、JavaとC#を用いた銀行の勘定系システム開発を3年間経験。品質を意識したシステム開発が可能です。"
+          >
+          </my-service>
+          <my-service
+            service-icon="fa-laptop-code"
+            service-menu="フロントエンド開発"
+            service-description="大手メーカ企業にて、HTML、CSS、JavaScript、TypeScript、jQueryを用いた銀行の勘定系システム開発を3年間経験。現在もVue.jsなどの新しいフレームワークを取り入れたフロントエンド開発スキルアップを推進。"
+          >
+          </my-service>
+          <my-service
+            service-icon="fa-robot"
+            service-menu="オートメーション"
+            service-description="Excel VBA+Powerpoint VBAを用いた、指定URLのフルスクリーンショットを取得する自動スクレイピングソフト開発の受注実績がございます。"
+          >
+          </my-service>
+          <my-service
+            service-icon="fa-language"
+            service-menu="TOEICコンサル"
+            service-description="留学経験なしでTOEIC550点から930点まで上げた実績と、アルバイトとして6年間塾講師の経験がある私が、TOEICのスコアをあげるためのお手伝いを致します。"
+          >
+          </my-service>
+        </div>
+      </div>
+      <!--/.container -->
+    </section>
+    <!--/.services -->
+  
+    <!-- message -->
+    <div class="message-bg" style="background-image: url(./img/bg-portfolios.jpg);">
+      <div class="message">
+          <p>これまで作成したWebや、</br>アプリをご紹介します。</p>
+      </div>
+    </div>
+  
+    <!-- ポートフォリオ -->
+    <section id="portfolios" class="portfolios inner">
+      <div class="portfolios__phrase animated">ポートフォリオ</div>
+      <h2 class="portfolios__title animated">portfolios</h2>
+      <div class="portfolios__image slider animated">
+        <div class="portfolio__image">
+          <a data-toggle="modal" data-target="#gridSystemModal1">
+            <img src="img/portfolio1.png">
+          </a>
+          <p class="portfolio__title">ポートフォリオサイト1</p>
+        </div>
+        <div class="portfolio__image">
+          <a data-toggle="modal" data-target="#gridSystemModal2">
+            <img src="img/portfolio1.png">
+          </a>
+          <p class="portfolio__title">ポートフォリオサイト2</p>
+        </div>
+        <div class="portfolio__image">
+          <a data-toggle="modal" data-target="#gridSystemModal3">
+            <img src="img/portfolio1.png">
+          </a>
+          <p class="portfolio__title">ポートフォリオサイト3</p>
+        </div>
+        <div class="portfolio__image">
+          <a data-toggle="modal" data-target="#gridSystemModal4">
+            <img src="img/portfolio1.png">
+          </a>
+          <p class="portfolio__title">ポートフォリオサイト4</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- message -->
+    <div class="message-bg-contact" style="background-image: url(./img/bg-contact.jpg);">
+      <div class="message">
+          <p>ご連絡お待ちしております。</p>
+          <a 
+            class="btn btn-primary bt-lg font-weight-bold p-3" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfF3y_zO9t9WnV_W4jr0rj7HDWGnEbcVL8BJ2Xvmod2s7A1bw/viewform?usp=sf_link" 
+            target="_blank" 
+            rel="noopener" 
+            role="button"
+          >
+            お問い合わせはこちら
+          </a>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+      &copy; 2020 Reo Togashi
+    </footer>
+  
+    <!-- ポートフォリオ(モーダル) -->
+    <portfolio-modal
+      modal-id="gridSystemModal1" 
+      modal-title="ポートフォリオサイト1"
+      portfolio-img="img/portfolio1.png"
+      portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
+      portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
+      portfolio-url="#"
+      portfolio-github="#"
+    >
+    </portfolio-modal>
+    <portfolio-modal
+      modal-id="gridSystemModal2" 
+      modal-title="ポートフォリオサイト2"
+      portfolio-img="img/portfolio1.png"
+      portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
+      portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
+      portfolio-url="#"
+      portfolio-github="#"
+    >
+    </portfolio-modal>
+    <portfolio-modal
+      modal-id="gridSystemModal3" 
+      modal-title="ポートフォリオサイト3"
+      portfolio-img="img/portfolio1.png"
+      portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
+      portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
+      portfolio-url="#"
+      portfolio-github="#"
+    >
+    </portfolio-modal>
+    <portfolio-modal
+      modal-id="gridSystemModal4" 
+      modal-title="ポートフォリオサイト4"
+      portfolio-img="img/portfolio1.png"
+      portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
+      portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
+      portfolio-url="#"
+      portfolio-github="#"
+    >
+    </portfolio-modal>
+
+  <!--#app-->
+  </div>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!-- Popper.js, 次に Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- その他のライブラリのJavaScript -->
+  <script src="js/vendor/jquery.waypoints.min.js"></script>
+  <script src="js/vendor/mobile-detect.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+ 
+  <!--Vue用のライブラリ-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ 
+  <script src="js/main.js"></script>
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+
+</body>
+
+</html>
