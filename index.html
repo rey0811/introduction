@@ -9,6 +9,10 @@
   <!-- Webフォント -->
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
 
+  <!--faviconを入れる-->
+  <link rel="icon" href="img/favicon-16.ico" sizes="16x16">
+  <link rel="icon" href="img/favicon-32.ico" sizes="32x32">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -185,7 +189,7 @@
     <!-- message -->
     <div class="message-bg" style="background-image: url(./img/bg-portfolios.jpg);">
       <div class="message">
-          <p>これまで作成したWebや、</br>アプリをご紹介します。</p>
+          <p>これまで作成したWebや、</br>アプリをご紹介します</p>
       </div>
     </div>
   
@@ -224,7 +228,7 @@
     <!-- message -->
     <div class="message-bg-contact" style="background-image: url(./img/bg-contact.jpg);">
       <div class="message">
-          <p>ご連絡お待ちしております。</p>
+          <p>ご連絡お待ちしております</p>
           <a 
             class="btn btn-primary bt-lg font-weight-bold p-3" 
             href="https://docs.google.com/forms/d/e/1FAIpQLSfF3y_zO9t9WnV_W4jr0rj7HDWGnEbcVL8BJ2Xvmod2s7A1bw/viewform?usp=sf_link" 
@@ -250,7 +254,7 @@
       portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
       portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
       portfolio-url="#"
-      portfolio-github="#"
+      portfolio-github="https://github.com/rey0811/introduction"
     >
     </portfolio-modal>
     <portfolio-modal
@@ -260,7 +264,7 @@
       portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
       portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
       portfolio-url="#"
-      portfolio-github="#"
+      portfolio-github="https://github.com/rey0811/introduction"
     >
     </portfolio-modal>
     <portfolio-modal
@@ -270,7 +274,7 @@
       portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
       portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
       portfolio-url="#"
-      portfolio-github="#"
+      portfolio-github="https://github.com/rey0811/introduction"
     >
     </portfolio-modal>
     <portfolio-modal
@@ -280,9 +284,16 @@
       portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
       portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4"
       portfolio-url="#"
-      portfolio-github="#"
+      portfolio-github="https://github.com/rey0811/introduction"
     >
     </portfolio-modal>
+    
+    <!--トップに戻るボタン-->
+    <div id="page_top">
+      <a href="#top" @click="smoothScroll">
+        <i class="fas fa-chevron-up top-back-icon"></i>
+      </a>
+    </div>
 
   <!--#app-->
   </div>
@@ -300,7 +311,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
  
   <!--Vue用のライブラリ-->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
  
   <script src="js/main.js"></script>
 

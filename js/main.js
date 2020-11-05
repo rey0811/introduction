@@ -20,7 +20,7 @@ if (isMobile) {
 
 /**
  * ---------------------------------------
- * ローディング画面をフェードアウト(仮)
+ * ローディング画面をフェードアウト
  * ---------------------------------------
  */
 $(window).on('load', function(){
@@ -29,6 +29,21 @@ $(window).on('load', function(){
     $("body").fadeIn();
   }
   , 10000);
+});
+
+/**
+ * ---------------------------------------
+ * スクロールに応じて、トップに戻るボタンを表示切り替え
+ * ---------------------------------------
+ */
+
+$(window).scroll(function () {
+  var now = $(window).scrollTop();
+  if (now > 100) {
+    $('#page_top').fadeIn("slow");
+  } else {
+    $('#page_top').fadeOut('slow');
+  }
 });
 
 /**
@@ -92,7 +107,8 @@ const smoothScroll = (e) => {
   );
 
   // ハンバーガーメニューが開いている場合は閉じる
-  $('.navbar-toggler').hide;
+  $('.navbar-collapse').collapse('hide');
+  // $('.navbar-toggler').hide;
 }
 
 // コンポーネント化(ナビゲーションメニュー)

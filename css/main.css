@@ -10,7 +10,9 @@
 body {
   color: #000;
   background-color: #fff;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif; 
+  /*画面の最小幅を指定(iphone5 SEと同じ)*/
+  min-width:320px;
 }
 
 /* インナー */
@@ -43,6 +45,28 @@ body {
 .animated {
   /* アニメーションで表示させるため最初は非表示 */
   opacity: 0;
+}
+
+/*トップに戻るボタン*/
+#page_top{
+    display: none;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+#page_top a{
+    display: block;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background: #7db4e6;
+    border-radius: 50%;
+    line-height: 65px;
+}
+.top-back-icon{
+    font-size: 25px;
+    color:#fff;
 }
 
 /*
@@ -374,6 +398,13 @@ body {
 .modal-dialog {
   /* モーダル時の最大幅を上書き */
   max-width: 700px!important;
+}
+
+/*モーダルの影部分*/
+.fade {
+  /*画面がmin-width以下になっても影は画面全体にかける*/
+  width: 100%!important;
+  height: 100%!important;
 }
 
 /*
