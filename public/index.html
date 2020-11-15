@@ -18,15 +18,15 @@
 
   <!-- Font Awesome(アニメーション) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css"/>
-  
+
   <!-- その他のライブラリのCSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="css/vendor/animate.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">  
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
   <link rel="stylesheet" href="css/main.css">
-  
+
   <noscript>
     <!-- JavaScriptが無効化されている場合の追加スタイルシート -->
     <link rel="stylesheet" href="css/noscript.css">
@@ -39,24 +39,24 @@
     <div id="loading">
       <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     </div> <!-- /#loading -->
-    
+
     <!-- トップ画面 -->
     <div id="top" class="top">
       <!-- ナビゲーションバー -->
       <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-  
+
           <!-- ホームリンク -->
           <a href="#top" class="navbar-brand nav-link" aria-label="ホーム" @click="smoothScroll">
             Reo Togashi
           </a>
-  
+
           <!-- 画面幅が狭い時に表示されるハンバーガーメニュー -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-  
+
           <!-- メニュー -->
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mr-auto">
@@ -76,7 +76,7 @@
         <source src="video/top-video.mp4" type="video/mp4">
       </video>
       <img class="top__img" src="video/top-video-still.jpg">
-      
+
       <!-- トップ -->
       <div class="top__text-box animate__animated animate__bounceInDown">
         <!--名前-->
@@ -89,7 +89,7 @@
         </a>
       </div>
     </div>
-  
+
     <!-- 自己紹介 -->
     <section id="about" class="about inner">
       <div class="about__phrase animated">私について</div>
@@ -100,14 +100,14 @@
           <div class="mb-3 col-lg-6 text-center animated">
             <img class="img-fluid rounded" src="img/profile.jpg">
           </div>
-  
+
           <!-- 紹介文 -->
           <div class="about__introduction col-lg-6 animated">
             <!--経歴-->
             <div class="about__introduction__backgrounds">
               <!--誕生-->
               <about-introduction-background
-                intro-title="1991年 - 誕生" 
+                intro-title="1991年 - 誕生"
                 icon-type="fa-baby"
                 icon-animation="faa-tada"
                 intro-description="神奈川県川崎市にて生まれる。<br>名前の由来は、珍しい名前を付けたかったから。"
@@ -115,7 +115,7 @@
               </about-introduction-background>
               <!--大学-->
               <about-introduction-background
-                intro-title="2010年 - 2016年 大学入学" 
+                intro-title="2010年 - 2016年 大学入学"
                 icon-type="fa-university"
                 icon-animation="faa-tada"
                 intro-description="都内の国公立大学に入学し、プログラミングや機械学習を学ぶ。<br>長期休暇を利用して、海外旅行や海外インターンシップを経験(計40ヵ国)"
@@ -123,7 +123,7 @@
               </about-introduction-background>
               <!--社会人(エンジニア)-->
               <about-introduction-background
-                intro-title="2016年 - エンジニア" 
+                intro-title="2016年 - エンジニア"
                 icon-type="fa-laptop-code"
                 icon-animation="faa-tada"
                 intro-description="アプリケーションエンジニアとして大手企業に就職する。<br>フロントエンド・バックエンドを使ったシステム開発に従事。"
@@ -131,7 +131,7 @@
               </about-introduction-background>
               <!--社会人(新規事業開発)-->
               <about-introduction-background
-                intro-title="2019年 - グローバル事業開発" 
+                intro-title="2019年 - グローバル事業開発"
                 icon-type="fa-lightbulb"
                 icon-animation="faa-tada"
                 intro-description="海外プロジェクトの新規事業開発としてグループ会社に出向する。<br>実証実験推進や顧客との要件定義など、幅広く活動推進中。<br>一方で、再度、エンジニアとして活躍したい気持ちが芽生え始める。"
@@ -142,7 +142,7 @@
         </div>
       </div>
     </section>
-    
+
     <!-- message -->
     <div class="message-bg message-bg-image1 " style="background-image: url(./img/bg-job.jpg);">
       <div class="message">
@@ -185,14 +185,14 @@
       <!--/.container -->
     </section>
     <!--/.services -->
-  
+
     <!-- message -->
     <div class="message-bg" style="background-image: url(./img/bg-portfolios.jpg);">
       <div class="message">
           <p>これまで作成したWebや、</br>アプリをご紹介します</p>
       </div>
     </div>
-  
+
     <!-- ポートフォリオ -->
     <section id="portfolios" class="portfolios inner">
       <div class="portfolios__phrase animated">ポートフォリオ</div>
@@ -229,11 +229,11 @@
     <div class="message-bg-contact" style="background-image: url(./img/bg-contact.jpg);">
       <div class="message">
           <p>ご連絡お待ちしております</p>
-          <a 
-            class="btn btn-primary bt-lg font-weight-bold p-3" 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfF3y_zO9t9WnV_W4jr0rj7HDWGnEbcVL8BJ2Xvmod2s7A1bw/viewform?usp=sf_link" 
-            target="_blank" 
-            rel="noopener" 
+          <a
+            class="btn btn-primary bt-lg font-weight-bold p-3"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfF3y_zO9t9WnV_W4jr0rj7HDWGnEbcVL8BJ2Xvmod2s7A1bw/viewform?usp=sf_link"
+            target="_blank"
+            rel="noopener"
             role="button"
           >
             お問い合わせはこちら
@@ -245,10 +245,10 @@
     <footer>
       &copy; 2020 Reo Togashi
     </footer>
-  
+
     <!-- ポートフォリオ(モーダル) -->
     <portfolio-modal
-      modal-id="gridSystemModal1" 
+      modal-id="gridSystemModal1"
       modal-title="ポートフォリオサイト"
       portfolio-img="img/portfolio1.png"
       portfolio-description="自分の自己紹介を兼ねた、ポートフォリオサイトです。(TechAcademyフロントエンドコースのオリジナルサイト)"
@@ -258,7 +258,7 @@
     >
     </portfolio-modal>
     <portfolio-modal
-      modal-id="gridSystemModal2" 
+      modal-id="gridSystemModal2"
       modal-title="オンライン本棚サービス"
       portfolio-img="img/portfolio2.png"
       portfolio-description="TechAcademyの課題をベースに、新規登録機能や星評価機能を追加しました。"
@@ -268,7 +268,7 @@
     >
     </portfolio-modal>
     <portfolio-modal
-      modal-id="gridSystemModal3" 
+      modal-id="gridSystemModal3"
       modal-title="写真検索アプリ"
       portfolio-img="img/portfolio3.png"
       portfolio-description="Flickr APIを活用した、写真検索アプリを開発しました。"
@@ -278,7 +278,7 @@
     >
     </portfolio-modal>
     <portfolio-modal
-      modal-id="gridSystemModal4" 
+      modal-id="gridSystemModal4"
       modal-title="リアルタイムチャットアプリ"
       portfolio-img="img/portfolio4.png"
       portfolio-description="TechAcademyの課題をベースに、お気に入り機能やメッセージ削除機能を追加しました。"
@@ -287,7 +287,7 @@
       portfolio-github="https://github.com/rey0811/realtime-chat-app"
     >
     </portfolio-modal>
-    
+
     <!--トップに戻るボタン-->
     <div id="page_top">
       <a href="#top" @click="smoothScroll">
@@ -297,7 +297,7 @@
 
   <!--#app-->
   </div>
-  
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -309,10 +309,10 @@
   <script src="js/vendor/jquery.waypoints.min.js"></script>
   <script src="js/vendor/mobile-detect.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
- 
+
   <!--Vue用のライブラリ-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
- 
+
   <script src="js/main.js"></script>
 
   <!-- Font Awesome -->
