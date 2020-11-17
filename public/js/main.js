@@ -126,7 +126,7 @@ const navbarMenu = {
             <span class="c-anim-btn">{{ initialMenu }}</span>
             <!--Hover中の表示文字-->
             <span>{{ hoverMenu }}</span>
-          </div>                
+          </div>
         </a>
     </li>
   `,
@@ -182,7 +182,7 @@ const portfolioModal = {
           <!--ボディ-->
           <div class="modal-body">
             <div class="container-fluid text-center">
-              <img class="modal__body__img" :src="portfolioImg">
+              <img class="modal__body__img" :src="portfolioImg" loading="lazy">
             </div>
             <div class="container-fluid mt-3">
               <p class="font-weight-bold">作品概要</p>
@@ -219,7 +219,7 @@ let app = new Vue({
   mounted () {
     this.waypoint()
   },
-  
+
   methods: {
     smoothScroll,
     waypoint () {
