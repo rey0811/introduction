@@ -137,6 +137,14 @@
                 intro-description="海外プロジェクトの新規事業開発としてグループ会社に出向する。<br>実証実験推進や顧客との要件定義など、幅広く活動推進中。<br>一方で、再度、エンジニアとして活躍したい気持ちが芽生え始める。"
               >
               </about-introduction-background>
+              <!--社会人(エンジニア)-->
+              <about-introduction-background
+                intro-title="2021年 - エンジニア"
+                icon-type="fa-laptop-code"
+                icon-animation="faa-tada"
+                intro-description="ブリッジエンジニアとしてベンチャー企業に転職。<br>既存システムの保守・運用・エンハンスや既存システムのAWS環境移行などに従事。"
+              >
+            </about-introduction-background>
             </div>
           </div>
         </div>
@@ -159,25 +167,25 @@
           <my-service
             service-icon="fa-code"
             service-menu="バックエンド開発"
-            service-description="大手メーカ企業にて、JavaとC#を用いた銀行の勘定系システム開発を3年間経験。品質を意識したシステム開発が可能です。"
+            service-description="大手メーカ企業にて、JavaとC#を用いた銀行の勘定系システム開発を3年間経験。"
           >
           </my-service>
           <my-service
             service-icon="fa-laptop-code"
             service-menu="フロントエンド開発"
-            service-description="大手メーカ企業にて、HTML、CSS、JavaScript、TypeScript、jQueryを用いた銀行の勘定系システム開発を3年間経験。現在もVue.jsなどの新しいフレームワークを取り入れたフロントエンド開発スキルアップを推進。"
+            service-description="大手メーカ企業にて、HTML、CSS、JavaScript、TypeScript、jQueryを用いた銀行の勘定系システム開発を3年間経験。"
           >
           </my-service>
           <my-service
             service-icon="fa-robot"
             service-menu="オートメーション"
-            service-description="Excel VBA+Powerpoint VBAを用いた、指定URLのフルスクリーンショットを取得する自動スクレイピングソフト開発の受注実績がございます。"
+            service-description="Excel VBA+Powerpoint VBAを用いた、指定URLのフルスクリーンショットを取得する自動スクレイピングソフト開発の受注実績あり。"
           >
           </my-service>
           <my-service
             service-icon="fa-language"
             service-menu="TOEICコンサル"
-            service-description="留学経験なしでTOEIC550点から930点まで上げた実績と、アルバイトとして6年間塾講師の経験がある私が、TOEICのスコアをあげるためのお手伝いを致します。"
+            service-description="留学経験なしでTOEIC550点から930点まで上げた実績と、アルバイトとして6年間塾講師の経験がある私が、TOEICのスコアをあげるためのサポートが可能です。"
           >
           </my-service>
         </div>
@@ -204,6 +212,7 @@
           </a>
           <p class="portfolio__title">ポートフォリオサイト</p>
         </div>
+        <!--
         <div class="portfolio__image">
           <a data-toggle="modal" data-target="#gridSystemModal2">
             <img src="img/portfolio2.png" loading="lazy">
@@ -221,6 +230,13 @@
             <img src="img/portfolio4.png" loading="lazy">
           </a>
           <p class="portfolio__title">リアルタイムチャットアプリ</p>
+        </div>
+        -->
+        <div class="portfolio__image">
+          <a data-toggle="modal" data-target="#gridSystemModal5">
+            <img src="img/portfolio5.png" loading="lazy">
+          </a>
+          <p class="portfolio__title">チャット翻訳アプリ</p>
         </div>
       </div>
     </section>
@@ -268,24 +284,24 @@
     >
     </portfolio-modal>
     <portfolio-modal
-      modal-id="gridSystemModal3"
-      modal-title="写真検索アプリ"
-      portfolio-img="img/portfolio3.png"
-      portfolio-description="Flickr APIを活用した、写真検索アプリを開発しました。"
-      portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Vue.js/ Bootstrap4/ Flickr API"
-      portfolio-url="https://photo-search-app.web.app/"
-      portfolio-github="https://github.com/rey0811/photo-search-app"
-    >
-    </portfolio-modal>
-    <portfolio-modal
       modal-id="gridSystemModal4"
       modal-title="リアルタイムチャットアプリ"
       portfolio-img="img/portfolio4.png"
       portfolio-description="TechAcademyの課題をベースに、お気に入り機能やメッセージ削除機能を追加しました。"
       portfolio-tech="HTML5/ CSS3/ JavaScript/ jQuery/ Bootstrap4/ Firebase"
-      portfolio-url="https://realtime-chat-76feb.web.app/"
-      portfolio-github="https://github.com/rey0811/realtime-chat-app"
+      portfolio-url="#"
+      portfolio-github="#"
     >
+    </portfolio-modal>
+
+    <portfolio-modal
+      modal-id="gridSystemModal5"
+      modal-title="チャット翻訳アプリ"
+      portfolio-img="img/portfolio5.png"
+      portfolio-description="Slackで「/jp_to_en 日本語」と入力すると、翻訳結果(英語)を返し、本アプリ利用者の履歴はDBに保存する。また、日次バッチにより利用者履歴のレポートをSlackに投稿する。インフラにはAWSを利用し、Lambdaを中心としたサーバーレスアプリケーションを実現。"
+      portfolio-tech="Node.js/AWS Lambda/AWS API Gateway/AWS Translate/AWS WAF/Dynamo DB/S3/CloudWatch Events"
+      portfolio-url="#"
+      portfolio-github="#">
     </portfolio-modal>
 
     <!--トップに戻るボタン-->
